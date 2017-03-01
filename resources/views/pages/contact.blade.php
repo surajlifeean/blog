@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>contact me</title>
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
@@ -19,7 +19,6 @@
     <![endif]-->
   </head>
   <body>
-
   <nav class="navbar navbar-default">
   <div class="container-fluid">
    <!--  Brand and toggle get grouped for better mobile display -->
@@ -36,7 +35,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#service">Services <span class="sr-only">(current)</span></a></li>
+        <li ><a href="#service">Services <span class="sr-only">(current)</span></a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#process">Process</a></li>
         <li><a href="#product">Products</a></li>
@@ -52,7 +51,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#work">Work</a></li>
         <li><a href="#Testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li class="active"><a href="#contact">Contact</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">my account<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -133,6 +132,30 @@
               <p><a class="btn btn-primary" href="#" role="button">more</a></p>
          </div>
         </div> 
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>Contact Me</h1>
+              <h1>
+              <form method="POST" action="{{url('/')}}/postcontact">
+                    <div class="form-group">
+                    <label name="email">Email:</label>
+                    <input id="email" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                    <label name="subject">Subject:</label>
+                    <input id="subject" name="subject" class="form-control">
+                    </div>
+                    <div class="form-group">
+                    <label name="message">Message:</label>
+                    <textarea id="message" name="message" class="form-control">Type your message here...</textarea>
+                    </div>
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    <input type="submit" value="Send Message" class="btn btn-success">
+              </form>
+            </div>
+          </div>
+        </div>
 
      <!-- <div class="col-md-3 col-md-offset-1">
          <div class="post">
@@ -145,6 +168,7 @@
  
     </div>
 </div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
